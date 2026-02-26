@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quvoo.ai — AI Finance & Fintech Intelligence Platform</title>
+  <meta name="description" content="Quvoo.ai — A premium .ai domain for next-generation AI-powered finance and fintech platforms. Unique, memorable, zero trademark conflicts. Inquire about acquisition." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark: #080c14;
+      --surface: #0d1220;
+      --surface2: #131929;
+      --accent: #00e5a0;
+      --accent-dim: rgba(0,229,160,0.08);
+      --text: #e8edf5;
+      --muted: #5a6478;
+      --border: rgba(255,255,255,0.06);
+      --border-accent: rgba(0,229,160,0.2);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--dark); color: var(--text); font-family: 'Space Mono', monospace; min-height: 100vh; overflow-x: hidden; }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: linear-gradient(rgba(0,229,160,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,160,0.025) 1px, transparent 1px);
+      background-size: 48px 48px; pointer-events: none; z-index: 0;
+    }
+    body::after {
+      content: ''; position: fixed; top: -20vh; left: 50%; transform: translateX(-50%);
+      width: 80vw; height: 60vh;
+      background: radial-gradient(ellipse, rgba(0,229,160,0.05) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+    .container { max-width: 920px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+    /* TICKER */
+    .ticker-bar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0.65rem 0; overflow: hidden; }
+    .ticker-inner { display: flex; gap: 4rem; animation: ticker 22s linear infinite; white-space: nowrap; width: max-content; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .tick-item { font-size: 0.58rem; letter-spacing: 0.1em; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; }
+    .tick-up { color: var(--accent); }
+
+    /* HEADER */
+    header { padding: 2rem 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); font-style: italic; }
+    .header-badge { display: flex; align-items: center; gap: 0.5rem; font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--border-accent); padding: 0.4rem 0.9rem; }
+    .pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
+
+    /* HERO */
+    .hero { padding: 7rem 0 5rem; }
+    .hero-tag { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.8rem; }
+    .hero-tag::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--accent); }
+    .domain-name { font-family: 'Playfair Display', serif; font-size: clamp(4.5rem, 12vw, 9.5rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.03em; color: var(--text); }
+    .domain-name .dot-ai { color: var(--accent); font-style: italic; font-weight: 400; }
+    .hero-desc { margin-top: 2.5rem; font-size: 0.75rem; line-height: 1.9; color: var(--muted); max-width: 520px; letter-spacing: 0.02em; }
+
+    /* STATS */
+    .stats-row { margin-top: 4rem; display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--border); background: var(--surface); }
+    .stat-item { padding: 1.8rem 1.5rem; border-right: 1px solid var(--border); position: relative; }
+    .stat-item:last-child { border-right: none; }
+    .stat-value { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 0.4rem; }
+    .stat-label { font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .stat-item::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.4s ease; }
+    .stat-item:hover::after { width: 100%; }
+
+    /* USE CASES */
+    .section-head { margin: 5rem 0 2.5rem; display: flex; align-items: center; gap: 1.5rem; }
+    .section-head h2 { font-size: 0.56rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .cases-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .case-item { background: var(--surface); padding: 2rem; transition: background 0.2s; }
+    .case-item:hover { background: var(--surface2); }
+    .case-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem; }
+    .case-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .case-arrow { color: var(--muted); font-size: 0.9rem; transition: color 0.2s; }
+    .case-item:hover .case-arrow { color: var(--accent); }
+    .case-desc { font-size: 0.63rem; line-height: 1.8; color: var(--muted); }
+
+    /* CONTACT */
+    .contact-section { margin: 5rem 0; border: 1px solid var(--border-accent); background: var(--surface); position: relative; overflow: hidden; }
+    .contact-section::before { content: ''; position: absolute; top: -50%; right: -10%; width: 50%; height: 200%; background: radial-gradient(ellipse, rgba(0,229,160,0.04) 0%, transparent 70%); pointer-events: none; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .contact-left { padding: 3.5rem; border-right: 1px solid var(--border); }
+    .contact-right { padding: 3.5rem; }
+    .contact-left h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 1rem; }
+    .contact-left p { font-size: 0.63rem; line-height: 1.85; color: var(--muted); }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label { font-size: 0.56rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+    .form-group input, .form-group textarea {
+      background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-bottom-color: rgba(255,255,255,0.12);
+      padding: 0.8rem 0.9rem; font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--text);
+      outline: none; transition: border-color 0.2s; resize: none; -webkit-appearance: none; border-radius: 0;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--border-accent); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(90,100,120,0.6); }
+    .btn-send { background: var(--accent); color: var(--dark); border: none; padding: 1rem 1.5rem; font-family: 'Space Mono', monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; margin-top: 0.5rem; }
+    .btn-send:hover { background: #00ffb3; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,229,160,0.2); }
+    .form-note { font-size: 0.58rem; color: var(--muted); letter-spacing: 0.05em; }
+    .form-success { display: none; padding: 2rem; text-align: center; }
+    .form-success p { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic; color: var(--accent); line-height: 1.5; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 2rem 0; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+    .footer-domain { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text); }
+    .footer-domain span { color: var(--accent); font-style: italic; }
+    .footer-copy { font-size: 0.56rem; color: var(--muted); letter-spacing: 0.1em; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-tag    { animation: fadeUp 0.5s ease 0.1s both; }
+    .domain-name { animation: fadeUp 0.7s ease 0.2s both; }
+    .hero-desc   { animation: fadeUp 0.6s ease 0.35s both; }
+    .stats-row   { animation: fadeUp 0.6s ease 0.5s both; }
+
+    /* RESPONSIVE */
+    @media (max-width: 680px) {
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .cases-list { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-left { border-right: none; border-bottom: 1px solid var(--border); }
+      header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TICKER -->
+  <div class="ticker-bar">
+    <div class="ticker-inner">
+      <span class="tick-item">AI FINTECH MARKET <span class="tick-up">↑ 42% YOY</span></span>
+      <span class="tick-item">GLOBAL AI INVESTMENT <span class="tick-up">$200B+ 2025</span></span>
+      <span class="tick-item">.AI DOMAINS ACTIVE <span class="tick-up">908,000+</span></span>
+      <span class="tick-item">AI AGENTS MARKET <span class="tick-up">$47B BY 2030</span></span>
+      <span class="tick-item">QUVOO.AI <span class="tick-up">AVAILABLE FOR ACQUISITION</span></span>
+      <span class="tick-item">AI FINTECH MARKET <span class="tick-up">↑ 42% YOY</span></span>
+      <span class="tick-item">GLOBAL AI INVESTMENT <span class="tick-up">$200B+ 2025</span></span>
+      <span class="tick-item">.AI DOMAINS ACTIVE <span class="tick-up">908,000+</span></span>
+      <span class="tick-item">AI AGENTS MARKET <span class="tick-up">$47B BY 2030</span></span>
+      <span class="tick-item">QUVOO.AI <span class="tick-up">AVAILABLE FOR ACQUISITION</span></span>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <header>
+      <div class="logo">Quvoo<span>.ai</span></div>
+      <div class="header-badge"><div class="pulse"></div>Available</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-tag">AI Finance · Fintech Intelligence · Quantum Value</div>
+      <h1 class="domain-name">Quvoo<span class="dot-ai">.ai</span></h1>
+      <p class="hero-desc">A distinctive, phonetically clean .ai domain purpose-built for AI-driven finance. Unique, zero trademark conflicts, and owns the SERP from day one. The next wave of fintech needs brands that feel as intelligent as the products behind them.</p>
+    </section>
+
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-value">5</div><div class="stat-label">Letters Total</div></div>
+      <div class="stat-item"><div class="stat-value">0</div><div class="stat-label">TM Conflicts</div></div>
+      <div class="stat-item"><div class="stat-value">.ai</div><div class="stat-label">Premium TLD</div></div>
+      <div class="stat-item"><div class="stat-value">48h</div><div class="stat-label">Response Time</div></div>
+    </div>
+
+    <div class="section-head"><h2>Ideal For</h2></div>
+    <div class="cases-list">
+      <div class="case-item">
+        <div class="case-header"><h4 class="case-title">Algorithmic Trading</h4><span class="case-arrow">→</span></div>
+        <p class="case-desc">AI-powered trading platforms, quant hedge funds, and robo-advisory services seeking premium digital real estate.</p>
+      </div>
+      <div class="case-item">
+        <div class="case-header"><h4 class="case-title">Personal Finance AI</h4><span class="case-arrow">→</span></div>
+        <p class="case-desc">Consumer-facing apps for budgeting, savings optimization, and AI-driven financial planning and wealth management.</p>
+      </div>
+      <div class="case-item">
+        <div class="case-header"><h4 class="case-title">Risk Analytics</h4><span class="case-arrow">→</span></div>
+        <p class="case-desc">Enterprise AI solutions for credit risk modeling, fraud detection, and real-time market risk assessment.</p>
+      </div>
+      <div class="case-item">
+        <div class="case-header"><h4 class="case-title">B2B Fintech Platform</h4><span class="case-arrow">→</span></div>
+        <p class="case-desc">Infrastructure plays — payment intelligence, lending AI, and embedded finance solutions for financial institutions.</p>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h2>Interested in Quvoo.ai?</h2>
+          <p>If you're building in AI finance or fintech and this domain fits your vision, reach out. We respond to every serious inquiry within 48 hours.</p>
+        </div>
+        <div class="contact-right">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="company">Company / Project</label>
+              <input type="text" id="company" name="company" placeholder="Optional" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+            </div>
+            <button type="submit" class="btn-send">Send Inquiry →</button>
+            <p class="form-note">Your information is kept strictly private.</p>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <p>Thank you — we'll be in touch within 48 hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-domain">Quvoo<span>.ai</span></div>
+      <div class="footer-copy">© 2026 · All rights reserved</div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(this);
+      window.location.href = `mailto:contact@quvoo.ai?subject=Inquiry - Quvoo.ai&body=Name: ${encodeURIComponent(data.get('name'))}%0AEmail: ${encodeURIComponent(data.get('email'))}%0ACompany: ${encodeURIComponent(data.get('company') || 'N/A')}%0A%0A${encodeURIComponent(data.get('message') || '')}`;
+      this.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
