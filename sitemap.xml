@@ -7,10 +7,3 @@
     <priority>1.0</priority>
   </url>
 </urlset>
-```
-
-**2. `robots.txt`**
-```
-User-agent: *
-Allow: /
-Sitemap: https://quvoo.ai/sitemap.xml
